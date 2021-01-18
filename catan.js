@@ -4,7 +4,7 @@ catan.vals=[]
 
 if(catan.div){
     let h='<div id="diceRes"></div>'
-    h+=''
+    h+='<div id="dicePlot" width="500px">'
     catan.div.innerHTML=h
     // create dice result table
     let div = document.getElementById('diceRes')
@@ -18,6 +18,41 @@ if(catan.div){
         dv.onclick=(ev)=>{
             catan.vals.push(j)
             console.log(dv,catan.vals)
+            catan.plot()
+        }
+        if(dv.textContent=='undo'){
+            dv.onclick=(ev)=>{
+                catan.vals.pop()
+                console.log(dv,catan.vals)
+                catan.plot()
+            }
         }
     })
+}
+
+catan.plot=(id="dicePlot")=>{
+    /*
+    let trace={
+        x: catan.vals,
+        type: 'histogram',
+        //binsz:1
+    }
+    */
+    let xx = [2,3,4,5,6,7,8,9,10,11,12]
+    let trace = {
+        x: xx.map(xi=>xi.toString()),
+        y: xx.map(n=>{
+            return catan.vals.filter(xi=>xi==n).length
+        }),
+        type: 'bar'
+    }
+    console.log(trace)
+    let layout = {
+        width:800,
+        xaxis: {
+            showgrid: true,
+            //range: [2, 12]
+        }
+    }
+    Plotly.newPlot(document.getElementById(id),[trace])
 }
