@@ -1,0 +1,22 @@
+#diceRes {
+    display:grid;
+    grid-template-columns: repeat(3,8em);
+    grid-gap:1em;
+}
+
+#diceRes > div {
+    color:blue;
+    background-color:silver;
+    text-align:center;
+    padding:1em;
+    font-size:1.5em;
+}
+
+#diceRes > div:hover {
+    background-color:yellow;
+    color:maroon;
+    font-size:2em;
+    text-align:center;
+    cursor:pointer
+}
+
