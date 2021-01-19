@@ -18,13 +18,13 @@ if(catan.div){
         dv.id=`val_${j}`
         dv.onclick=(ev)=>{
             catan.vals.push(j)
-            console.log(dv,catan.vals)
+            console.log(catan.vals)
             catan.plot()
         }
         if(dv.textContent=='undo'){
             dv.onclick=(ev)=>{
                 catan.vals.pop()
-                console.log(dv,catan.vals)
+                console.log(catan.vals)
                 catan.plot()
             }
         }
@@ -52,7 +52,7 @@ catan.plot=(id="dicePlot")=>{
         textposition: 'auto',
         type: 'bar'
     }
-    console.log(trace)
+    //console.log(trace)
     let layout = {
         width:500,
         height:500,
