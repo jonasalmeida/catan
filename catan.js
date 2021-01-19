@@ -65,5 +65,5 @@ catan.plot=(id="dicePlot")=>{
             showgrid: true
         }
     }
-    Plotly.newPlot(document.getElementById(id),[trace],layout)
+    Plotly.newPlot(document.getElementById(id),[trace],layout,{displayModeBar: false})
 }
