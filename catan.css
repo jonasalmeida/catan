@@ -15,7 +15,7 @@
 #diceRes > div:hover {
     background-color:yellow;
     color:maroon;
-    font-size:2em;
+    /*font-size:2em;*/
     text-align:center;
     cursor:pointer
 }
