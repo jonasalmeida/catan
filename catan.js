@@ -48,11 +48,17 @@ catan.plot=(id="dicePlot")=>{
     }
     console.log(trace)
     let layout = {
-        width:800,
+        width:500,
         xaxis: {
             showgrid: true,
+            tickmode: "array",
+            tickvals:xx,
+            ticktext:xx.map(xi=>xi.toString())
             //range: [2, 12]
+        },
+        yaxis: {
+            showgrid: true
         }
     }
-    Plotly.newPlot(document.getElementById(id),[trace])
+    Plotly.newPlot(document.getElementById(id),[trace],layout)
 }
