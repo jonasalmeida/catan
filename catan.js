@@ -39,11 +39,16 @@ catan.plot=(id="dicePlot")=>{
     }
     */
     let xx = [2,3,4,5,6,7,8,9,10,11,12]
+    let yy = xx.map(n=>{
+        return catan.vals.filter(xi=>xi==n).length
+    })
+    let sum = catan.vals.length
     let trace = {
         x: xx.map(xi=>xi.toString()),
-        y: xx.map(n=>{
-            return catan.vals.filter(xi=>xi==n).length
-        }),
+        y: yy,
+        //mode: 'lines+markers+text',
+        text:yy.map(yi=>` ${(Math.round(100*yi/sum))} %`),
+        textposition: 'auto',
         type: 'bar'
     }
     console.log(trace)
