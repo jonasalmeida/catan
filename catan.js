@@ -5,6 +5,7 @@ catan.vals=[]
 if(catan.div){
     let h='<div id="diceRes"></div>'
     h+='<div id="dicePlot" width="500px">'
+    h+='<a href="https://github.com/jonasalmeida/catan" target="_bank">code</a>'
     catan.div.innerHTML=h
     // create dice result table
     let div = document.getElementById('diceRes')
@@ -54,6 +55,7 @@ catan.plot=(id="dicePlot")=>{
     console.log(trace)
     let layout = {
         width:500,
+        height:500,
         xaxis: {
             showgrid: true,
             tickmode: "array",
