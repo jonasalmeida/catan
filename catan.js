@@ -23,10 +23,22 @@ catan.plot=(id="dicePlot")=>{
         textposition: 'auto',
         type: 'bar'
     }
+    let expected = {
+        x:xx,
+        y:xx.map(xi=>sum*Math.abs(6-Math.abs(xi-7))/36),
+        mode:'lines',
+        opacity:0.5,
+        line:{
+            color:'red',
+            dash: 'dot'
+        }
+
+    }
     //console.log(trace)
     let layout = {
         width:500,
         height:500,
+        showlegend: false,
         xaxis: {
             showgrid: true,
             tickmode: "array",
@@ -38,7 +50,7 @@ catan.plot=(id="dicePlot")=>{
             showgrid: true
         }
     }
-    Plotly.newPlot(document.getElementById(id),[trace],layout,{displayModeBar: false})
+    Plotly.newPlot(document.getElementById(id),[trace,expected],layout,{staticPlot: true,displayModeBar: false})
 }
 
 if(catan.div){
